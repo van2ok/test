@@ -2,7 +2,7 @@
     $items_from_page = 10;
     $visible_number_pages = 3;
     $active_page = $_GET[p];
-    if(!isset($active_page)) $active_page = 1;
+    if(!isset($active_page) or $active_page <= 0) $active_page = 1;
     $all_rows = 20000;
     $all_pages = ceil($all_rows / $items_from_page);
     if($active_page > $all_pages) $active_page = $all_pages;
